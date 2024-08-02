@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Container, Row } from "../Common/Common";
 import $ from "jquery";
 
@@ -32,7 +31,7 @@ $("<style>")
   )
   .appendTo("head"); // <style> 태그를 <head>에 추가합니다.;
 
-const Headline = () => {
+const Headline = (props) => {
   return (
     <section style={section}>
       <Container>

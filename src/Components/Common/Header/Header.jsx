@@ -12,21 +12,23 @@ const Li = styled.li`
   padding: 43px 0;
   font-size: 1.4583vw;
   font-weight: bold;
+  transition: "all 0.1s linear";
 `;
 
 const row = {
   display: "flex",
   justifyContent: "flex-end",
   position: "fixed",
+  zIndex: "100",
 };
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <Container>
         <Row style={row}>
           <nav>
-            <Ul>
+            <Ul className={props.classNameUl}>
               <Li>PROJECT</Li>
               <Li>SKILL</Li>
               <Li>CONTACT</Li>

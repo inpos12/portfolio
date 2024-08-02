@@ -53,7 +53,7 @@ const Git = styled.div`
 const ImgBox = styled.figure`
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   pointer-events: none; /* 클릭 이벤트 방지 */
   transform: translate(-50%, -50%); /* 원의 중심을 마우스 위치로 맞춤 */
   transition: transform 0.5s ease; /* 부드러운 이동 효과 */
@@ -95,7 +95,7 @@ const row = {
   alignItems: "normal",
 };
 
-export const Worklist = () => {
+export const Worklist = (props) => {
   const ref1 = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
@@ -142,7 +142,6 @@ export const Worklist = () => {
         ) {
           $(selectorimg).css({ left: x + "px", top: y + "px" });
           $(selectorimg).css({ display: "block" });
-          console.log("aaa");
 
           $(selectortext).css({
             transition: "all 0.4s ease-in-out",
@@ -170,7 +169,7 @@ export const Worklist = () => {
   });
 
   return (
-    <section style={section}>
+    <section style={section} ref={props.refTop}>
       <Container style={container}>
         <WorklistItem
           title={"BNB NETWORK"}

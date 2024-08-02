@@ -124,7 +124,6 @@ const Loading = () => {
   return (
     <>
       <Pad />
-      <h1>aa</h1>
     </>
   );
 };

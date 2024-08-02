@@ -11,17 +11,30 @@ const Main = styled.div`
   transition: all 0.4s ease-in;
 `;
 const View = styled.div`
-  width: 100vw;
   height: 100vh;
   color: #8eafce;
 `;
 
 export const Home = () => {
+  const ref = useRef();
+
   useEffect(() => {
     $("body").css({ backgroundColor: "#e6f2ff" });
     setTimeout(() => {
       $(".Main").css({ opacity: "1" });
     }, 410);
+
+    //
+
+    let HeadlineTop = ref.current.offsetTop / 2;
+    $(window).scroll(function () {
+      if (window.scrollY >= HeadlineTop) {
+        $(".Header").css({ color: "#e6f2ff" });
+      } else if (HeadlineTop >= window.scrollY) {
+        $(".Header").css({ color: "#8eafce" });
+        console.log("aaa");
+      }
+    });
   }, []);
 
   //
@@ -29,11 +42,11 @@ export const Home = () => {
   return (
     <Main className="Main">
       <View>
-        <Header />
+        <Header classNameUl="Header" />
         <Intro />
       </View>
       <Headline />
-      <Worklist />
+      <Worklist refTop={ref} />
     </Main>
   );
 };
