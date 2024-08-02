@@ -26,13 +26,12 @@ export const Home = () => {
 
     //
 
-    let HeadlineTop = ref.current.offsetTop / 2;
+    let HeadlineTop = ref.current.offsetTop;
     $(window).scroll(function () {
       if (window.scrollY >= HeadlineTop) {
         $(".Header").css({ color: "#e6f2ff" });
       } else if (HeadlineTop >= window.scrollY) {
         $(".Header").css({ color: "#8eafce" });
-        console.log("aaa");
       }
     });
   }, []);
